@@ -1,11 +1,19 @@
-倒垃圾
+""" Waste Dumping"""
 
-周一|Raymond
-周二|Baozi
-周三|Sherry
+roommates = ['Raymond', 'Sherry', 'Benji']
+pets_of_Sherry = ['peanut', 'thousand*2']
 
-周四|Raymond
-周五|Baozi
-周六|Sherry
+week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
-周日|臭着
+duty_call = dict(zip(week, roommates * 2))
+
+print("Waste dumping")
+
+for day, shift in duty_call.items():
+    if shift == 'Benji':
+        shift = pets_of_Sherry
+        print("{0} | {1} & {2}".format(day, *shift))
+        continue
+    print("{0} | {1}".format(day, shift))
+
+
